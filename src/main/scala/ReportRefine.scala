@@ -26,8 +26,6 @@ object ReportRefine {
   @transient lazy val  log = Logger.getLogger(this.getClass)
 
   val ZOOKEEPER_URL="127.0.0.1:2181"
-
-
   /*
    args[0]=pd_d_path ; args[1] market_close_type_I; args[2]=member_ctgry_d
    args[3]=member_d_path ; args[4]= bond_repo_deal_path ;
