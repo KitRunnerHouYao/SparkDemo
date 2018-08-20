@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SparkPi">
+    <output-path>$PROJECT_DIR$/out/artifacts/SparkPi</output-path>
+    <root id="archive" name="dwspark01.jar">
+      <element id="module-output" name="dwspark01" />
+    </root>
+  </artifact>
+</component>
