@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat
 import org.apache.hadoop.conf.Configuration
 
 /**
+  *
   * Created by zzg on 2018/7/20.
   * 使用 6位码标识机构。
   * 修改了如下两个Bug:1.scala BigDecimal 不能直接写phoenix.这是因为phoenix Decimal 映射成java.math.Decimal

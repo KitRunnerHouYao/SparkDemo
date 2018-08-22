@@ -2,7 +2,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 
 /**
   * Created by yaohou on 9:23 2018/7/13.
-  * description: 
+  * description:
   */
 object Testscala {
 

@@ -1,7 +1,8 @@
 import org.apache.spark.{SparkConf, SparkContext}
+
 /**
   * Created by yaohou on 22:10 2018/7/10.
-  * description: 
+  * description:
   */
 object WordCount {
   def main(args: Array[String]) {

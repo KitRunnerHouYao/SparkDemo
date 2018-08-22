@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by zzg on 2018/8/1.
- */
 public class Utils {
 
     public static List<String> splite(String csv_str) {
@@ -47,20 +44,24 @@ public class Utils {
                 subStr.trim();
                 ll.add(subStr);
             }
-         }catch(Exception e){
+        }catch(Exception e){
             System.out.println(csv_str);
             e.printStackTrace();
 
         }
-        return ll;
+        ArrayList<String> ans = new ArrayList();
+        for(int i=0;i<ll.size();i++)
+            ans.add(ll.get(i).trim());
+
+        return ans;
     }
 
     public static  void main(String[]args){
-        String str = "2018/7/11,机构名称1,全部,全部\"d\",\"\"\"d\"\"1\",2.02E+12,1,ibo001";
         String string  = "\" a\",\"32.2322322323232fsd2342432342423424242424,32232\", \"adfb,\'\"\", \",\"\",  \"中国人民kaIFA银行\",  \"2018/12/7\",12";
-        List<String> result = splite(str);
+        List<String> result = splite(string);
         for(String s:result){
             System.out.println(s);
         }
     }
+
 }

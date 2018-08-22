@@ -24,36 +24,24 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.function.FlatMapFunction;
 import org.apache.spark.api.java.function.Function2;
 import org.apache.spark.api.java.function.PairFunction;
-import org.apache.spark.sql.SparkSession;
 
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public final class JavaWordCount {
+// 使用java写 Spark
+public final class TestJavaWordCount {
   private static final Pattern SPACE = Pattern.compile(" ");
 
   public static void main(String[] args) throws Exception {
-
-//    if (args.length < 1) {
-//      System.err.println("Usage: JavaWordCount <file>");
-//      System.exit(1);
-//    }
-
-//    SparkSession spark = SparkSession
-//      .builder().master("local")
-//      .appName("JavaWordCount")
-//      .getOrCreate();
 
     SparkConf conf = new SparkConf()
                 .setMaster("local[*]")
                 .setAppName("spark-wordcount");
     JavaSparkContext sc = new JavaSparkContext(conf);
+      sc.setLogLevel("ERROR");
     JavaRDD<String> rdd = sc.textFile("D:\\tmp\\spark\\spark.txt");
-
-    //JavaRDD<String> lines = spark.read().textFile(args[0]).javaRDD();
-//    JavaRDD<String> lines = spark.read().textFile("D:\\tmp\\spark\\spark.txt").javaRDD();
 
     JavaRDD<String> words = rdd.flatMap(new FlatMapFunction<String, String>() {
       @Override
@@ -82,6 +70,5 @@ public final class JavaWordCount {
     for (Tuple2<?,?> tuple : output) {
       System.out.println(tuple._1() + ": " + tuple._2());
     }
-//    spark.stop();
   }
 }
